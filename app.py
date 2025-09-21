@@ -10,12 +10,6 @@ model = YOLO("weights/your -model.pt")
 
 # Upload image
 uploaded_image = st.file_uploader("Upload an image (jpg, png)", type=["jpg", "jpeg", "png"])
-
-if uploaded_image is not None:
-
-# Show original image
-SED698/BIS698/INT698: AI for Business Workshop Model Evaluation and Deployment September 21, 2025 33 / 39
-app.py Example (cont.)
 if uploaded_image is not None:
 
 # Show original image
@@ -31,17 +25,12 @@ results = model.predict(image_np , conf=0.4)
 
 # Draw results on image
 result_image = results[0].plot()
-st.image(result_image , caption="YOLO Detection Result", use_container_width=
-True)
+st.image(result_image , caption="YOLO Detection Result", use_container_width=True)
 st.success("Detection completed!")
 
 # Extract detection results
 boxes = results[0].boxes
-SED698/BIS698/INT698: AI for Business Workshop Model Evaluation and Deployment September 21, 2025 34 / 39
-app.py Example (cont.)
 if uploaded_image is not None:
-                                                                      
-...
                                                                       
 # Extract detection results
 boxes = results[0].boxes
